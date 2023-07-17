@@ -18,13 +18,21 @@ use App\Http\Controllers\AuthorController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+Route::get('/', function() {
+    return view('Home.welcome');
+});
 
-Route::get('/',[booksController::class, 'index']);
+
+
+Route::get('/books',[booksController::class, 'index']);
 Route::get('/book/{bookId}', [booksController::class, 'show'])->name('kniga.prikazi');
 
 
 Route::get('/avtori', [AuthorController::class, 'index']);
 Route::get('/author/{authorId}', [AuthorController::class, 'show'])->name('avtor.prikazi');
 
+
 Route::get('/korisnici', [usersController::class, 'index']);
+
+
 

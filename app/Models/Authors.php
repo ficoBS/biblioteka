@@ -14,4 +14,8 @@ class Authors extends Model
         return  $this->belongsToMany(Books::class, 'author_has_books',  "author_id", "books_id");
     }
 
+
+    public function slika() {
+        return $this->belongsTo(Images::class,"images_id");
+    }
 }

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\bookUsers;
 
-class usersController extends Controller
+class EmployeesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class usersController extends Controller
      */
     public function index()
     {
-        $userData["users"]=bookUsers::all();
-        return  view("useri.users", $userData);
+        $vraboteni["employees"]=Employees::all();
+        return  view("employees.list", $vraboteni);
     }
 
     /**
@@ -47,6 +46,7 @@ class usersController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**

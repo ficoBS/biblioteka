@@ -5,12 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class bookUsers extends Model
+class Employees extends Model
 {
     use HasFactory;
-    protected $table = "users";
-
-    public function knige() {
-        return  $this->belongsTo(Books::class);
-    }
+    protected $table="employees";
 }

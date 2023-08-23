@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Books;
 use App\Models\bookUsers;
+use App\Models\Books;
 
-class booksController extends Controller
+class korisniciController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class booksController extends Controller
      */
     public function index()
     {
-        $data['knige']=Books::all();
-        return view('books.list', $data);
+        $userData["users"]=bookUsers::all();
+        return  view("useri.users", $userData);
     }
 
     /**
@@ -46,11 +46,11 @@ class booksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Books $books, $bookId)
+    public function show(bookUsers $users, $userId)
     {
-        $data['book'] = Books::find($bookId);
-        $data['users']=bookUsers::all();
-        return view('books.show', $data);
+        $data['user'] = bookUsers::find($userId);
+        $data['books']=Books::all();
+        return view('useri.show', $data);
     }
 
     /**

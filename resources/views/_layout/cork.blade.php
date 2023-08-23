@@ -197,6 +197,8 @@
                     </div>
                     
                 </li>
+<!--
+                @if(!is_null(Auth::User()))
 
                 <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -240,8 +242,30 @@
                             </a>
                         </div>
                     </div>
-                    
-                </li>
+                    @else
+                    <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-container">
+                            <div class="avatar avatar-sm avatar-indicators">
+                                <img alt="avatar" src="{{ asset('assets/images/user.png')}}" class="rounded-circle">
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
+                        <div class="user-profile-section">
+                            <div class="media mx-auto">
+                                <div class="media-body">
+                                    <a href="login">
+                                    <h5>Najava</h5>
+                                    </a>
+                                    <a href="registration">
+                                        <h5>Napravi account</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    @endif -->
             </ul>
         </header>
     </div>
@@ -312,7 +336,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="biblioteka" data-bs-parent="#accordionExample">
                             <li>
-                                <a href="korisnici"> Users </a>
+                                <a href="users"> Users </a>
                             </li>
                             <li>
                                 <a href="books"> Books </a>
@@ -734,7 +758,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="users" data-bs-parent="#accordionExample">
                             <li>
-                                <a href="../html/user-profile.html"> Profile </a>
+                                <a href="./user-profile.html"> Profile </a>
                             </li>
                             <li>
                                 <a href="./user-account-settings.html"> Account Settings </a>

@@ -32,14 +32,15 @@
 
                 <div class="row justify-content-center">
                 @foreach ($users as $user)
-
                     <div class="col-xxl-2 col-xl-3 col-lg-3 mb-lg-0 col-md-6 mb-3">
                         <div class="card">
                             <div class="card-body">
+                            <a href="{{ route('user.prikazi',['userId'=> $user->id ]) }}">
                                 <div class="card-icon mb-4">
-                                <img src="{{ asset('assets/images/'.$user->profil->name)}}" height=55px>
+                                
                                 </div>
-                                <h5 class="card-title mb-0">{{$user->firstName}} {{ $user->lastName}}</h5>
+                                <h5 class="card-title mb-0">{{$user->email}}</h5>
+                            </a>
                             </div>
                         </div>
                     </div>
